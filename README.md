@@ -1,2 +1,2 @@
 # pyDDoS
-Python DDoS script !for testing!
+To use: `python app.py` or `python3 app.py`

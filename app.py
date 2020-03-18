@@ -11,4 +11,9 @@ hour = now.hour
 minute = now.minute
 day = now.day
 month = now.month
-year = now.years
+
+#statics
+sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+bytes = random._urandom(1490)
+
+os.system("clear")
